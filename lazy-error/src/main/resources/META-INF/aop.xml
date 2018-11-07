@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--AspectJ load-time weaving config file pro IS OKpráce.-->
+<aspectj>
+  <aspects>
+    <!--Aspekty Springu jsou definovaný v aop.xml ve spring-aspects.-->
+  </aspects>
+  <weaver options="-showWeaveInfo">
+    <!--Provede dump weavnutých tříd do adresáře _ajdump.-->
+    <!--<dump within="okp.core.common.adresa..*" beforeandafter="true"/>-->
+    <!--Pattern pro weavování aspektů.-->
+    <include within="hibernate.example..*"/>
+    <!--Odstranění weavování CGLIB proxy, detekce CGLIB proxy podle org.springframework.aop.support.AopUtils.isCglibProxy-->
+    <exclude within="okp..*$$* AND org.springframework.aop.SpringProxy+"/>
+  </weaver>
+</aspectj>
