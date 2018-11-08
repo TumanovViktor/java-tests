@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="LazyErrorApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="lazy-error_test" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="hibernate.example.lazyerror.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="hibernate.example.lazyerror" />
+    <option name="MAIN_CLASS_NAME" value="hibernate.example.lazyerror.LazyErrorApplicationTests" />
+    <option name="METHOD_NAME" value="contextLoads" />
+    <option name="TEST_OBJECT" value="method" />
+    <option name="VM_PARAMETERS" value="-ea -javaagent:aspectjweaver.jar -javaagent:spring-instrument.jar -Dnet.bytebuddy.experimental=true" />
+    <option name="PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

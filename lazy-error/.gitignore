@@ -11,12 +11,30 @@
 .springBeans
 .sts4-cache
 
+# Specifické věci pro uživatele
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/uiDesigner.xml
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/dataSources/
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/artifacts
+.idea/**/modules.xml
+
 ### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
 /out/
+.idea/misc.xml
+.idea/vcs.xml
+.idea/codeStyles/**
+.idea/misc.xml
 
 ### NetBeans ###
 /nbproject/private/
