@@ -2,6 +2,7 @@ package hibernate.example.lazyerror;
 
 
 import hibernate.example.lazyerror.Entity.Contact;
+import hibernate.example.lazyerror.Entity.OrganizationExtA;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.Set;
 
 
@@ -28,14 +30,17 @@ public class LazyErrorApplicationTests {
 	static final Logger logger = LoggerFactory.getLogger(LazyErrorApplicationTests.class);
 
 
+	// Vytvařet repo není potřeba, stačí vynechat nad testem anotaci Transactional, potom transakce existuje pro jeden dotaz
 	@Test
 	public void contextLoads() {
 		Set<Contact> setContact = repo.metoda().getContactList();
-//		OrganizationExtA orgExtA = (OrganizationExtA) em.createQuery(
-//			"from OrganizationExtA as orgA " +
-//			"inner join fetch orgA.organization as org " +
-//				"where orgA.organizationId=1")
-//		.getSingleResult();
+		OrganizationExtA orgExtA = (OrganizationExtA) em.createQuery(
+			"from OrganizationExtA as orgA " +
+			"inner join fetch orgA.organization as org " +
+				"where orgA.organizationId=1")
+		.getSingleResult();
+
+		orgExtA.getOrganization();
 
 // 		Organization org = (Organization) em.createQuery(
 //			"from Organization as org " +
