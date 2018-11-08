@@ -13,4 +13,6 @@
     </root>
     <logger name="org.hibernate.SQL" level="DEBUG">
     </logger>
+    <!-- Třída vypisuje spoustu warningu s novou verzi hibernate 5.3.7-->
+    <logger name="org.springframework.orm.jpa.persistenceunit.ClassFileTransformerAdapter" level="error"/>
 </configuration>
